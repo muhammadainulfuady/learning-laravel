@@ -1,0 +1,19 @@
+body {
+    background-color: teal;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+}
