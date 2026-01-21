@@ -1,4 +1,4 @@
 @extends("layouts.main")
 @section("container")
-    <h1>Halaman home</h1>
+    <h1>Jmbod</h1>
 @endsection

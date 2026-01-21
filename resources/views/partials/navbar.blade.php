@@ -1,7 +1,7 @@
 {{-- navbar start --}}
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-gradient border-bottom border-3 border-info">
     <div class="container">
-        <a class="navbar-brand" href="/">404 Laravel</a>
+        <a class="navbar-brand" href="/">404 LaraveL</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -15,7 +15,10 @@
                     <a class="nav-link {{ ($title === "About") ? "active" : ""}}" href="/about">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ ($title === "Posts") ? "active" : ""}}" href="/blog">Blog</a>
+                    <a class="nav-link {{ ($title === "Posts") ? "active" : ""}}" href="/posts">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ ($title === "Contact") ? "active" : ""}}" href="/contact">Contact Me</a>
                 </li>
             </ul>
         </div>
