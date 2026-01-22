@@ -7,13 +7,12 @@
                 @foreach ($posts as $post)
                     <article class="mb-5 pb-4 border-bottom">
                         <h2 class="article-unik">
-                            <a href="/posts/{{ $post['slug'] }}" class="text-decoration-none text-primary hover-opacity">
-                                {{ $post['title'] }}
+                            <a href="/posts/{{ $post->slug }}" class="text-decoration-none text-primary hover-opacity">
+                                {{ $post->title }}
                             </a>
                         </h2>
-                        <h6 class="text-muted">By: <span class="text-dark fw-semibold">{{ $post['author'] }}</span></h6>
-                        <p class="mt-3 text-secondary">{{ Str::limit($post['body'], 130) }}</p>
-                        <a href="/posts/{{ $post['slug'] }}" class="btn btn-sm btn-outline-primary">Read More..</a>
+                        <p class="mt-3 text-secondary">{{ $post->excerpt }}</p>
+                        <a href="/posts/{{ $post->slug }}" class="btn btn-sm btn-outline-primary">Read More..</a>
                     </article>
                 @endforeach
             </div>

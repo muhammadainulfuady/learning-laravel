@@ -38,8 +38,8 @@ Route::get('/about', function () {
 // route blog
 Route::get('/posts', [PostController::class, "index"]);
 
-// halaman single post
-Route::get("/posts/{slug}", [PostController::class, "show"]);
+// halaman single post dengan metode binding
+Route::get("/posts/{post:slug}", [PostController::class, "show"]);
 
 // halaman contact
 Route::get("/contact", [ContactController::class, "showContact"]);
