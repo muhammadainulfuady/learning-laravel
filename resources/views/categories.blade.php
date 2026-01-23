@@ -5,7 +5,6 @@
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <h1 class="text-center mb-5 fw-bold text-danger">Post Categories</h1>
-
                 <div class="list-group shadow-sm">
                     @foreach ($categories as $category)
                         <a href="/categories/{{ $category->slug }}"

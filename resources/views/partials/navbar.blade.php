@@ -16,22 +16,27 @@
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
                     {{-- Active link menggunakan bg-white atau border-bottom putih agar menonjol di atas merah --}}
-                    <a class="nav-link {{ ($title === 'Home') ? 'active fw-bold' : ''}}" href="/">
+                    <a class="nav-link {{ ($active === 'home') ? 'active fw-bold' : ''}}" href="/">
                         Home
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ ($title === 'About') ? 'active fw-bold' : ''}}" href="/about">
+                    <a class="nav-link {{ ($active === 'about') ? 'active fw-bold' : ''}}" href="/about">
                         About
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ ($title === 'Posts') ? 'active fw-bold' : ''}}" href="/posts">
+                    <a class="nav-link {{ ($active === 'categories') ? 'active fw-bold' : ''}}" href="/categories">
+                        Categories
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ ($active === 'posts') ? 'active fw-bold' : ''}}" href="/posts">
                         Blog
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ ($title === 'Contact') ? 'active fw-bold' : ''}}" href="/contact">
+                    <a class="nav-link {{ ($active === 'contact') ? 'active fw-bold' : ''}}" href="/contact">
                         Contact
                     </a>
                 </li>

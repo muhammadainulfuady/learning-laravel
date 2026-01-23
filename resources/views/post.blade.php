@@ -19,10 +19,16 @@
                         </div>
                     </div>
 
-                    {{-- Isi Artikel --}}
-                    <div class="article-body fs-5 lh-base text-secondary mb-5">
-                        {!! $post->body !!}
+                    <div class="img-thumbnail rounded-start text-center my-3 p-0 overflow-hidden">
+                        <img src="https://placeimg.dev/400x200?gradient=FF5733,4F46E5&text={{ $post->category->name }}&fontSize=13"
+                            class="img-fluid w-100" alt="{{ $post->category->name }}"
+                            style="object-fit: cover; aspect-ratio: 2 / 1;">
                     </div>
+
+                    {{-- Isi Artikel --}}
+                    <article class="article-body fs-5 lh-base text-secondary mb-5 text-start">
+                        {!! $post->body !!}
+                    </article>
 
                     {{-- Navigasi Bawah --}}
                     <div class="border-top pt-4">

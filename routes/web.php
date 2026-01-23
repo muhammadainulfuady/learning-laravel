@@ -23,6 +23,7 @@ Route::get('/', function () {
     return view('home', [
         'name' => 'LaraveL 404',
         "title" => "Home",
+        'active' => 'home',
         'totalArtikel' => Post::count(),
         'totalCategory' => Category::count()
     ]);
@@ -32,6 +33,7 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return view('about', [
         "title" => "About",
+        'active' => 'about',
         "name" => "Muhammad Ainul Fuady",
         "email" => "ainulfuadi1234@gmail.com",
         "nim" => "240411100009",
@@ -53,6 +55,7 @@ Route::get("/contact", [ContactController::class, "showContact"]);
 Route::get("/categories", function () {
     return view("categories", [
         "title" => 'Post categories',
+        'active' => 'categories',
         'categories' => Category::all()
     ]);
 });
@@ -61,6 +64,7 @@ Route::get("/categories", function () {
 Route::get("/categories/{category:slug}", function (Category $category) {
     return view("posts", [
         "title" => "Post By Category : $category->name",
+        'active' => 'posts',
         'posts' => $category->posts->load('category', 'author'),
     ]);
 });
@@ -69,6 +73,7 @@ Route::get("/categories/{category:slug}", function (Category $category) {
 Route::get("/authors/{author:username}", function (User $author) {
     return view("posts", [
         "title" => "Posts By Author : $author->name",
+        'active' => 'posts',
         'posts' => $author->posts->load('category', 'author'),
     ]);
 });

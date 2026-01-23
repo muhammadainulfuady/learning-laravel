@@ -5,7 +5,6 @@
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <h1 class="text-center mb-5 fw-bold text-danger">Contact Me</h1>
-
                 @foreach ($contacts as $contact)
                     <div class="card shadow-sm border-0 mb-4 overflow-hidden" style="border-radius: 15px;">
                         {{-- Header Card dengan aksen Danger --}}
