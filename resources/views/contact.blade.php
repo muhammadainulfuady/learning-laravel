@@ -25,49 +25,14 @@
                                             class="text-decoration-none text-dark fw-semibold">{{ $contact->email }}</a>
                                     </div>
                                 </li>
-
-                                {{-- No hp --}}
-                                <li class="list-group-item d-flex align-items-center py-3">
-                                    <i class="bi bi-envelope-at-fill text-danger fs-4 me-3"></i>
-                                    <div>
-                                        <small class="text-muted d-block text-uppercase fw-bold" style="font-size: 0.7rem;">No
-                                            Handphone</small>
-                                        <a href="/contact"
-                                            class="text-decoration-none text-dark fw-semibold">{{ $contact->no_hp }}</a>
-                                    </div>
-                                </li>
-
-                                {{-- GitHub --}}
-                                <li class="list-group-item d-flex align-items-center py-3">
-                                    <i class="bi bi-github text-danger fs-4 me-3"></i>
-                                    <div>
-                                        <small class="text-muted d-block text-uppercase fw-bold"
-                                            style="font-size: 0.7rem;">GitHub Profile</small>
-                                        <a href="{{ $contact->github }}" target="_blank"
-                                            class="text-decoration-none text-dark fw-semibold">github.com/muhammadainulfuady</a>
-                                    </div>
-                                </li>
-
-                                {{-- Instagram --}}
-                                <li class="list-group-item d-flex align-items-center py-3 border-0">
-                                    <i class="bi bi-instagram text-danger fs-4 me-3"></i>
-                                    <div>
-                                        <small class="text-muted d-block text-uppercase fw-bold"
-                                            style="font-size: 0.7rem;">Instagram</small>
-                                        <a href="{{ $contact->instagram }}" target="_blank"
-                                            class="text-decoration-none text-dark fw-semibold">@mhmmdanlfuady</a>
-                                    </div>
-                                </li>
-                            </ul>
                         </div>
-                    </div>
                 @endforeach
-
-                <div class="text-center mt-4">
-                    <p class="text-muted">Senang bisa berdiskusi seputar Web Development atau Informatika Engineering!</p>
-                    <a href="/" class="btn btn-outline-danger rounded-pill px-4">Kembali ke Home</a>
+                    <div class="text-center mt-4">
+                        <p class="text-muted">Senang bisa berdiskusi seputar Web Development atau Informatika Engineering!
+                        </p>
+                        <a href="/" class="btn btn-outline-danger rounded-pill px-4">Kembali ke Home</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 @endsection

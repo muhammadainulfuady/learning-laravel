@@ -1,8 +1,8 @@
 @extends("layouts.main")
 @section("container")
     <div class="container d-flex justify-content-center">
-        <div class="card shadow border-0 overflow-hidden" style="max-width: 500px; border-radius: 15px;">
-            <div class="card-header bg-gradient bg-dark py-3 text-center">
+        <div class="card shadow border-0 overflow-hidden" style="width: 800px; border-radius: 15px;">
+            <div class="card-header bg-gradient bg-danger py-3 text-center">
                 <h5 class="mb-0 text-white fw-bold" style="letter-spacing: 1px;">PROFIL MAHASISWA</h5>
             </div>
 

@@ -17,9 +17,6 @@ class CreateContactMesTable extends Migration
         Schema::create('contact_mes', function (Blueprint $table) {
             $table->id();
             $table->text('email');
-            $table->string('no_hp')->nullable();
-            $table->string('github');
-            $table->string('instagram');
             $table->timestamps();
         });
     }

@@ -11,7 +11,7 @@
             <hr class="my-4">
             <div class="d-flex gap-2">
                 <a href="/posts" class="btn btn-danger btn-lg px-4 shadow">Lihat Blog</a>
-                <a href="/about" class="btn btn-outline-secondary btn-lg px-4">Tentang Saya</a>
+                <a href="/about" class="btn btn-outline-secondary btn-lg px-4">Tentang LaraveL 404</a>
             </div>
         </div>
     </div>

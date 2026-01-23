@@ -11,7 +11,8 @@
                     {{-- Meta Info --}}
                     <div class="d-flex align-items-center text-muted mb-4 pb-3 border-bottom">
                         <div class="small">
-                            By. <a href="/about" class="text-decoration-none fw-bold text-dark">Muhammad Ainul Fuady</a>
+                            By. <a href="/authors/{{ $post->author->username }}"
+                                class="text-decoration-none fw-bold text-dark">{{ $post->author->name }}</a>
                             in <a href="/categories/{{ $post->category->slug }}"
                                 class="text-decoration-none badge bg-danger text-white ms-1">{{ $post->category->name }}</a>
                             <span class="ms-2">• {{ $post->created_at->format('d M Y') }}</span>
