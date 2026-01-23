@@ -20,7 +20,10 @@ use App\Models\Category;
 // route home
 Route::get('/', function () {
     return view('home', [
-        "title" => "Home"
+        'name' => 'LaraveL 404',
+        "title" => "Home",
+        'totalArtikel' => Post::count(),
+        'totalCategory' => Category::count()
     ]);
 });
 
@@ -32,7 +35,7 @@ Route::get('/about', function () {
         "email" => "ainulfuadi1234@gmail.com",
         "nim" => "240411100009",
         "prodi" => "Teknik Informatika",
-        "image" => "ANIME.jpg"
+        "image" => "gambar-6.jpg"
     ]);
 });
 
@@ -44,6 +47,14 @@ Route::get("/posts/{post:slug}", [PostController::class, "show"]);
 
 // halaman contact
 Route::get("/contact", [ContactController::class, "showContact"]);
+
+// halaman categories
+Route::get("/categories", function () {
+    return view("categories", [
+        "title" => 'Post categories',
+        'categories' => Category::all()
+    ]);
+});
 
 // halaman category
 Route::get("/categories/{category:slug}", function (Category $category) {
