@@ -1,9 +1,10 @@
 <?php
 
+use App\Models\Post;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PostController;
-use App\Models\Post;
 use Illuminate\Support\Facades\Route;
+use App\Models\Category;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,4 +44,13 @@ Route::get("/posts/{post:slug}", [PostController::class, "show"]);
 
 // halaman contact
 Route::get("/contact", [ContactController::class, "showContact"]);
+
+// halaman category
+Route::get("/categories/{category:slug}", function (Category $category) {
+    return view("category", [
+        "title" => $category->name,
+        'posts' => $category->posts,
+        'category' => $category->name
+    ]);
+});
 ?>
