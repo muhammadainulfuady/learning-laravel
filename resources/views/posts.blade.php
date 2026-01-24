@@ -7,6 +7,12 @@
             <div class="row justify-content-center mb-3">
                 <div class="col-md-6">
                     <form action="/posts" method="GET">
+                        @if (request('category'))
+                            <input type="hidden" name="category" value="{{ request('category') }}">
+                        @endif
+                        @if (request('author'))
+                            <input type="hidden" name="author" value="{{ request('author') }}">
+                        @endif
                         <div class="input-group mb-3">
                             <input type="text" class="form-control" placeholder="Search..." name="search"
                                 value="{{ request('search') }}">
@@ -14,6 +20,9 @@
                         </div>
                     </form>
                 </div>
+            </div>
+            <div class="d-flex justify-content-end">
+                {{ $posts->links() }}
             </div>
             <div class="row justify-content-center">
                 <div class="col-md-10">
@@ -41,7 +50,7 @@
 
                                         <p class="card-text mb-2">
                                             <small class="text-muted">
-                                                By. <a href="/authors/{{ $post->author->username }}"
+                                                By. <a href="/posts?author={{ $post->author->username }}"
                                                     class="text-decoration-none fw-bold text-danger">{{ $post->author->name }}</a>
                                                 in<a href="/posts?category={{ $post->category->slug }}"
                                                     class="text-decoration-none badge bg-danger text-white ms-1">{{ $post->category->name }}</a>
@@ -78,4 +87,5 @@
                 </div>
             @endif
         </div>
+
 @endsection

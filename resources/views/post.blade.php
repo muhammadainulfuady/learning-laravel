@@ -11,9 +11,9 @@
                     {{-- Meta Info --}}
                     <div class="d-flex align-items-center text-muted mb-4 pb-3 border-bottom">
                         <div class="small">
-                            By. <a href="/authors/{{ $post->author->username }}"
+                            By. <a href="/posts?=author{{ $post->author->username }}"
                                 class="text-decoration-none fw-bold text-dark">{{ $post->author->name }}</a>
-                            in <a href="/categories/{{ $post->category->slug }}"
+                            in <a href="/posts?category={{ $post->category->slug }}"
                                 class="text-decoration-none badge bg-danger text-white ms-1">{{ $post->category->name }}</a>
                             <span class="ms-2">• {{ $post->created_at->format('d M Y') }}</span>
                         </div>
@@ -32,8 +32,9 @@
 
                     {{-- Navigasi Bawah --}}
                     <div class="border-top pt-4">
-                        <a href="/posts" class="btn btn-outline-danger rounded-pill px-4">
-                            <i class="bi bi-arrow-left me-1"></i> Back to Blog
+                        <a href="/posts?category={{ $post->category->slug }}" class=" btn btn-outline-danger rounded-pill
+                                    px-4 ">
+                            <i class=" bi bi-arrow-left me-1"></i> Back to Blog
                         </a>
                     </div>
                 </article>

@@ -7,7 +7,7 @@
                 <h1 class="text-center mb-5 fw-bold text-danger">Post Categories</h1>
                 <div class="list-group shadow-sm">
                     @foreach ($categories as $category)
-                        <a href="/categories/{{ $category->slug }}"
+                        <a href="/posts?category={{ $category->slug }}"
                             class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3 border-danger-subtle">
                             <div class="fw-bold">
                                 <i class="bi bi-folder2-open text-danger me-2"></i>
