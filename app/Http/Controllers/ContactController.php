@@ -10,6 +10,7 @@ class ContactController extends Controller
     {
         return view('contact', [
             "title" => "Contact",
+            'active' => 'contact',
             "contacts" => ContactMe::all()
         ]);
     }

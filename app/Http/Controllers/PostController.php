@@ -10,9 +10,8 @@ class PostController extends Controller
     {
         return view('posts', [
             "title" => "All Posts",
-            // "posts" => Post::all()
             'active' => 'posts',
-            "posts" => Post::latest()->get()
+            "posts" => Post::latest()->filter(request(['search', 'category']))->get()
         ]);
     }
     public function show(Post $post)

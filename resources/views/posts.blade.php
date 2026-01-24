@@ -1,9 +1,20 @@
-@extends("layouts.main")
-@section("container")
+@extends('layouts.main')
+@section('container')
     <div class="container mt-4">
         {{-- Logic to cheking posts is true or false --}}
         @if ($posts->count() > 0)
-            <h4 class="text-center mb-5 fw-bold fs-2 display-4 text-danger">{{ $title }}</h4>
+            <h4 class="text-center mb-3 fw-bold fs-2 display-4 text-danger">{{ $title }}</h4>
+            <div class="row justify-content-center mb-3">
+                <div class="col-md-6">
+                    <form action="/posts" method="GET">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Search..." name="search"
+                                value="{{ request('search') }}">
+                            <button class="btn btn-danger" type="submit">Search</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
             <div class="row justify-content-center">
                 <div class="col-md-10">
                     <div class="row">
@@ -14,7 +25,7 @@
                                     <div class="position-relative">
                                         <div class="position-absolute px-2 py-1 text-white small"
                                             style="background-color: rgba(220, 53, 69, 0.8); border-bottom-right-radius: 8px;">
-                                            <a href="/categories/{{ $post->category->slug }}"
+                                            <a href="/posts?category={{ $post->category->slug }}"
                                                 class="text-white text-decoration-none">{{ $post->category->name }}</a>
                                         </div>
                                         <img src="https://placeimg.dev/500x350?gradient=FF5733,4F46E5&text={{ $post->category->name }}&fontSize=15"
@@ -32,10 +43,12 @@
                                             <small class="text-muted">
                                                 By. <a href="/authors/{{ $post->author->username }}"
                                                     class="text-decoration-none fw-bold text-danger">{{ $post->author->name }}</a>
+                                                in<a href="/posts?category={{ $post->category->slug }}"
+                                                    class="text-decoration-none badge bg-danger text-white ms-1">{{ $post->category->name }}</a>
                                             </small>
                                         </p>
 
-                                        <p class="card-text text-secondary small">{{$post->excerpt }}</p>
+                                        <p class="card-text text-secondary small">{{ $post->excerpt }}</p>
 
                                         <div class="mt-auto pt-3">
                                             <a href="/posts/{{ $post->slug }}" class="btn btn-danger btn-sm w-100 rounded-pill">
@@ -59,8 +72,7 @@
                         <div
                             class="text-center p-5 bg-light rounded-3 border border-danger border-2 border-opacity-25 shadow-sm">
                             <i class="bi bi-journal-x display-1 text-danger"></i>
-                            <h3 class="mt-3 fw-bold">Belum ada artikel.</h3>
-                            <a href="/" class="btn btn-outline-danger mt-3">Kembali ke Home</a>
+                            <h3 class="mt-3 fw-bold">Belum ada artikel {{ request('search') ?? '404' }}</h3>
                         </div>
                     </div>
                 </div>
