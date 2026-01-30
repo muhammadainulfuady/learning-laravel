@@ -67,7 +67,7 @@
                 @else
                     <li class="nav-item">
                         <a class="nav-link {{ ($active === 'login') ? 'active fw-bold' : ''}}" href="/login"><i
-                                class="bi bi-box-arrow-in-left"></i>
+                                class="bi bi-box-arrow-in-right"></i>
                             Login
                         </a>
                     </li>
