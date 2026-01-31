@@ -12,12 +12,16 @@
                         <a href="/dashboard/posts" class="btn btn-success">
                             <span data-feather="arrow-left"></span>Back to all my posts
                         </a>
-                        <a href="/posts?category={{ $post->category->slug }}" class="btn btn-warning">
+                        <a href="/dashboard/posts/{{ $post->slug }}/edit" class="btn btn-warning">
                             <span data-feather="edit"></span>Edit Post
                         </a>
-                        <a href="/posts?category={{ $post->category->slug }}" class="btn btn-danger">
-                            <span data-feather="x-circle"></span>Delete Post
-                        </a>
+                        <form action="/dashboard/posts/{{ $post->slug }}" method="POST" class="d-inline">
+                            @method('delete')
+                            @csrf
+                            <button class="btn btn-danger" onclick="return confirm('Are you sure?')">
+                                <span data-feather="x-circle"></span> Delete
+                            </button>
+                        </form>
                     </div>
                     <div class="img-thumbnail rounded-start text-center my-3 p-0 overflow-hidden">
                         <img src="https://placeimg.dev/400x200?gradient=FF5733,4F46E5&text={{ $post->category->name }}&fontSize=13"
