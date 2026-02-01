@@ -37,9 +37,14 @@
                                             <a href="/posts?category={{ $post->category->slug }}"
                                                 class="text-white text-decoration-none">{{ $post->category->name }}</a>
                                         </div>
-                                        <img src="https://placeimg.dev/500x350?gradient=FF5733,4F46E5&text={{ $post->category->name }}&fontSize=15"
-                                            class="card-img-top w-100" alt="{{ $post->category->name }}"
-                                            style="height: 200px; object-fit: cover;">
+                                        @if ($post->image)
+                                            <img src="{{ asset('storage/' . $post->image) }}" class="img-fluid w-100"
+                                                alt="{{ $post->category->name }}">
+                                        @else
+                                            <img src="https://placeimg.dev/400x200?gradient=FF5733,4F46E5&text={{ $post->category->name }}&fontSize=13"
+                                                class="img-fluid w-100" alt="{{ $post->category->name }}"
+                                                style="object-fit: cover; aspect-ratio: 2 / 1;">
+                                        @endif
                                     </div>
                                     <div class="card-body d-flex flex-column">
                                         <h5 class="card-title fw-bold">

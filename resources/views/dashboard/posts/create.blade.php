@@ -41,9 +41,7 @@
                 </select>
             </div>
             <div class="mb-3">
-                <label for="image" class="form-label @error('image')
-                    is-invalid
-                @enderror">Post image</label>
+                <label for="image" class="form-label @error('image') is-invalid @enderror">Post image</label>
                 <input class="form-control" type="file" id="image" name="image">
                 @error('image')
                     <div class="invalid-feedback">

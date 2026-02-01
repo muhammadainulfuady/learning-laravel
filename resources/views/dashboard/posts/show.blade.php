@@ -24,9 +24,14 @@
                         </form>
                     </div>
                     <div class="img-thumbnail rounded-start text-center my-3 p-0 overflow-hidden">
-                        <img src="https://placeimg.dev/400x200?gradient=FF5733,4F46E5&text={{ $post->category->name }}&fontSize=13"
-                            class="img-fluid w-100" alt="{{ $post->category->name }}"
-                            style="object-fit: cover; aspect-ratio: 2 / 1;">
+                        @if ($post->image)
+                            <img src="{{ asset('storage/' . $post->image) }}" class="img-fluid w-100"
+                                alt="{{ $post->category->name }}">
+                        @else
+                            <img src="https://placeimg.dev/400x200?gradient=FF5733,4F46E5&text={{ $post->category->name }}&fontSize=13"
+                                class="img-fluid w-100" alt="{{ $post->category->name }}"
+                                style="object-fit: cover; aspect-ratio: 2 / 1;">
+                        @endif
                     </div>
 
                     {{-- Isi Artikel --}}
